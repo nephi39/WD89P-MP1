@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/styles-appointment.css">
+    <title>VMS</title>
+	<style>
+		@keyframes float-eth {
+		  0% {
+			transform: translateY(0.5rem);
+		  }
+		  50% {
+			transform: translateY(1.5rem);
+		  }
+		  100% {
+			transform: translateY(0.5rem);
+		  }
+		}
+	</style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+               <span class="nav__logo-circle">VMS</span>
+               <span class="nav__logo-name">Visitor's Management System</span>
+            </a>
+            <div class="nav__menu" id="nav-menu">
+				<span class="nav__title">VMS LOGIN</span>
+				<h3 class="nav__name">Visitor's Management System</h3>
+            </div>
+		</nav>
+    </header>
+    <main class="main">
+        <section class="contact section" id="contact">
+			<div class="contact__container grid">
+				<div class="contact__data">
+					<h2 class="section__title-2">
+						<span>Account Login</span>
+					</h2>
+
+					<p class="contact__description-1">
+						<div class="home__img-eth">
+							<img src="assets/img/Cavite_Province.png" alt="image" class="home__rocket" style="filter: drop-shadow(0 4px 32px hsla(203, 71%, 60%, .5)); animation: float-eth 4s ease-in-out infinite;" >
+						</div>
+					</p>
+					<div class="geometric-box"></div>
+				</div>
+				<div class="contact__mail" style="margin-top:5px;">
+					<h2 class="contact__title ">
+						Credentials
+					</h2>
+					<form action="" class="contact__form" id="contact-form">
+                    <div class="contact__box">
+                        <input type="text" name="txtemail" id = "txtemail" class="contact__input" style="font-size:20px;" required placeholder="Email Address" />
+							<label for="txtemail" class="contact__label">Email Address</label>
+                        </div>
+						<div class="contact__box">
+							<input type="password" name="txtpassword" id = "txtpassword" class="contact__input" style="font-size:20px;" required placeholder="Password" />
+							<label for="name" class="contact__label">Password</label>
+                        </div>
+						<a href="information.html">
+							<button type="button" name="btnlogin" id = "btnlogin" class="contact__button button">
+								<i class="ri-send-plane-line"></i> Login
+							</button>
+						</a>
+					</form>
+				</div>
+
+				<div class="contact__social">
+					<img src="assets/img/curved-arrow.svg" alt="" class="contact__social-arrow">
+
+					<div class="contact__social-data">
+						<div>
+							<p class="contact__social-description-2">
+								<span class="footer__copy">
+									&#169; Developed By The
+									<a href="#">Provincial Government of Cavite - Provincial Information and Communications Technology Office</a>
+								</span>
+							</p>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+    </main>
+   </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/styles-appointment.css">
+    <title>VMS</title>
+	<link rel="stylesheet" href="assets/calendar1/jquery-ui.css">
+	<script src="assets/calendar1/jquery-3.6.0.js"></script>
+	<script src="assets/calendar1/jquery-ui.js"></script>
+	<script>
+		var startDate = new Date();
+		startDate.setDate(startDate.getDate());
+		if(startDate.getDay() == 0){
+			 startDate.setDate(startDate.getDate() + 1);
+		}else if(startDate.getDay() == 6 ){
+			startDate.setDate(startDate.getDate() + 2);
+		}else{
+			startDate.setDate(startDate.getDate());
+		}
+		$( function() {
+			var dateToday = new Date(); 
+			$( "#calendar" ).datepicker({
+				minDate: startDate,
+				beforeShowDay: $.datepicker.noWeekends,
+				autoSize: true,
+				dateFormat: 'yy-mm-dd',
+				changeMonth: true,
+				changeYear: true,
+				maxDate:'3m'
+			});	
+		});
+  </script>
+</head>
+<body style="background-color:#DEDEDE;">
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+               <span class="nav__logo-circle">VMS</span>
+               <span class="nav__logo-name">Visitor's Management System</span>
+            </a>
+		</nav>
+    </header>
+    <main class="main">
+        <section class="contact section" id="contact">
+			<div class="contact__container grid">
+				<div class="contact__data text-center">
+					<h4 >
+						<span>Schedule<br/>Appointment</span>
+					</h4>
+					<img src="assets/img/Cavite_Province.png" alt="Image" style="filter: drop-shadow(0 4px 32px hsla(203, 71%, 60%, .5)); ">
+               </div>
+               <div class="contact__mail"style="margin-top:10px;">
+					<form action="" class="contact__form" id="contact-form">
+						<div class="row" id = "qrcodecontainer" style="display:none; text-align:center; align-content: center;"></div>
+						<div class="contact__box" id="container_fname">
+							<input type="text" name="txtfirstname" id = "txtfirstname" value=""  class="contact__input" required placeholder="First Name" />
+							<label for="name" class="contact__label">First Name</label>
+                        </div>
+						<div class="contact__box" id="container_lname">
+							<input type="text" name="txtlastname" id = "txtlastname" value=""  class="contact__input" required placeholder="Last Name" />
+							<label for="name" class="contact__label">Last Name</label>
+                        </div>
+                        <div class="contact__box" id="container_org">
+							<input type="text" name="txtorganization" id = "txtorganization" value="" class="contact__input" required placeholder="Organization" />
+							<label for="txtorganization" class="contact__label">Organization</label>
+                        </div>
+						<div class="contact__box" id="container_purpose">
+							<input type="text" name="txtpurpose" id = "txtpurpose" value="" class="contact__input" required placeholder="Purpose" />
+							<label for="txtpurpose" class="contact__label">Purpose</label>
+                        </div>
+						<div class="contact__box" id="container_contact">
+							<input type="number" name="txtcontact" id = "txtcontact" value="" class="contact__input"  maxlength = "11" required placeholder="Contact Number" />
+							<label for="txtcontact" class="contact__label">Contact Number</label>
+                        </div>
+						<div class="contact__box" id="container_email">
+							<input type="text" name="txtemail" id = "txtemail" value="" class="contact__input" required placeholder="Email Address" />
+							<label for="txtemail" class="contact__label">Email Address</label>
+                        </div>
+						<div class="contact__box" id="container_seloffice">
+							<select name="seloffice" id = "seloffice" class="contact__input">
+								<option value = "" selected>Select Office Here</option>
+								<option value = "OPG" selected>Office of the Provincial Governor</option>
+								<option value = "OPVG" selected>Office of the Provincial Vice Governor</option>
+								<option value = "OPG" selected>Human Resource Management Office</option>
+								<option value = "OPG" selected>Information and Communications Technology Office</option>
+							</select>
+							<label for="seloffice" class="contact__label">Office to Visit</label>
+						</div>
+						<div class="contact__box" id="container_selstaff" >
+							<select name="selstaff" id = "selstaff" class="contact__input">
+								<option value="" selected>Select Personnel Here</option>
+								<option value="1">Department Head</option>
+								<option value="2">Staff</option>
+							</select>
+							<label for="selstaff" class="contact__label">Office to Visit</label>
+						</div>		
+						<div class="contact__social-data">
+							<div id="calendar" style="font-size:20px; border:2px solid #1f364f; margin-inline:auto;"></div>
+						</div>
+						<div class="contact__container" id="container_privacy" style="font-size:12px; color:#FFF;">
+							<label for="" style="font-weight:bolder; color:red;">Data Privacy Agreement: </label><br/>
+								By signing this consent form, I grant my
+								free, voluntary and unconditional consent to the collection and
+								processing of all Personal Data (as defined below), and account or
+								transaction information or records (collectively, the "Information")
+								relating to me disclosed/transmitted by me in person or by
+								my authorized representative/s to the information database
+								system of the <strong>VMS - Visitor's Management System </strong>and/or any
+								of its authorized representative/s as Information
+								controller, by whatever means in accordance with Republic Act (R.A.)
+								10173, otherwise known as the “Data Privacy Act of 2012” of the
+								Republic of the Philippines, including its Implementing Rules and
+								Regulations (IRR) as well as all other guidelines and issuances by the
+								National Privacy Commission (NPC). 	
+						</div>
+						<div class="contact__container" style="font-weight:bold; font-size:20px; display:none; color:#FFF;" id = "container_agree">
+							<input type="checkbox" id="agree" value="AGREE"> Yes, I agree
+						</div>
+						<div class="contact__container" id = "container_submission1" >
+							<button type="submit" name="btnappointment" id = "btnappointment" class="contact__button button" style="font-size:15px; width:100%;" >
+								Schedule Appointment
+							</button>
+						</div>
+					</form>
+				</div>
+            </div>
+        </section>	 
+	</main>
+	<footer class="footer" style="background-color:#dedede;">
+		<div class="footer__container container grid" >
+			<span class="footer__copy">
+				<img src="assets/img/curved-arrow.svg" alt="" class="contact__social-arrow">
+				&#169; Developed By The
+				<a href="#">Provincial Government of Cavite <br/> Provincial Information and Communications Technology Office</a>
+			</span>
+		</div>
+	</footer>
+</body>
+</html>
